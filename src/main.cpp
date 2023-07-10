@@ -7,12 +7,12 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 {
     const wchar_t CLASS_NAME[] = L"D3D11 Example";
 
-    WNDCLASS wc = {};
-    wc.lpfnWndProc = WindowProc;
-    wc.hInstance = hInstance;
-    wc.lpszClassName = CLASS_NAME;
+    WNDCLASS wndclass = {};
+    wndclass.lpfnWndProc = WindowProc;
+    wndclass.hInstance = hInstance;
+    wndclass.lpszClassName = CLASS_NAME;
 
-    if (RegisterClass(&wc) == 0)
+    if (RegisterClass(&wndclass) == 0)
     {
         return -1;
     }

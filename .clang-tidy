@@ -1,0 +1,4 @@
+---
+Checks: 'cppcoreguidelines-*,modernize-*,performance-*,readability-*'
+WarningsAsErrors: false
+FormatStyle: Microsoft
