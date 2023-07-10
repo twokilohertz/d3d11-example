@@ -14,7 +14,7 @@ GUI::GUI(HINSTANCE hInstance, int nCmdShow)
 
     m_hwnd =
         CreateWindowEx(0, CLASS_NAME, L"D3D11 Example", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,
-                       CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, NULL, NULL, hInstance, NULL);
+                       CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, NULL, NULL, hInstance, this);
 
     if (m_hwnd == NULL)
     {
@@ -41,7 +41,33 @@ void GUI::run()
     }
 }
 
+HWND GUI::get_window_handle(void)
+{
+    return m_hwnd;
+}
+
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+    static GUI *gui_instance = nullptr;
+
+    switch (uMsg)
+    {
+    case WM_CREATE:
+        gui_instance =
+            reinterpret_cast<GUI *>((reinterpret_cast<CREATESTRUCT *>(lParam))->lpCreateParams);
+    case WM_CLOSE:
+        if (gui_instance != nullptr)
+        {
+            HWND window_handle = gui_instance->get_window_handle();
+            if (window_handle != NULL)
+            {
+                DestroyWindow(window_handle);
+            }
+        }
+        return 0;
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        return 0;
+    }
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }

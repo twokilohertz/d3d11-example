@@ -13,5 +13,7 @@ class GUI
   public:
     GUI(HINSTANCE hInstance, int nCmdShow);
     ~GUI();
+
     void run();
+    HWND get_window_handle(void);
 };
