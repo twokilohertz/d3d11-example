@@ -12,7 +12,7 @@ class DX11Backend
     ID3D11DeviceContext *m_context = nullptr;
 
   public:
-    DX11Backend();
+    DX11Backend(HWND hwnd);
     ~DX11Backend() = default;
 
   private:

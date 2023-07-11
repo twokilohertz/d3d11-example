@@ -28,7 +28,7 @@ GUI::GUI(HINSTANCE hInstance, int nCmdShow)
 
     // Initialise D3D11 backend
 
-    m_backend = std::make_unique<DX11Backend>();
+    m_backend = std::make_unique<DX11Backend>(m_hwnd);
 }
 
 GUI::~GUI()
