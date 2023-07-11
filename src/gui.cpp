@@ -1,4 +1,5 @@
 #include "gui.hpp"
+#include <iostream>
 
 GUI::GUI(HINSTANCE hInstance, int nCmdShow)
 {
@@ -21,14 +22,21 @@ GUI::GUI(HINSTANCE hInstance, int nCmdShow)
         return;
     }
 
+    std::cout << "Created application window" << std::endl;
+
     ShowWindow(m_hwnd, nCmdShow);
+
+    // Initialise D3D11 backend
+
+    m_backend = std::make_unique<DX11Backend>();
 }
 
 GUI::~GUI()
 {
     ShowWindow(m_hwnd, SW_HIDE);
     CloseHandle(m_hwnd);
-    UnregisterClass(CLASS_NAME, NULL);
+    // FIXME: vvv Exception thrown [...]: 0xC0000008: An invalid handle was specified.
+    UnregisterClass(CLASS_NAME, GetModuleHandle(NULL));
 }
 
 void GUI::run()

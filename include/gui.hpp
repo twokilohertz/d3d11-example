@@ -1,4 +1,6 @@
 #include <Windows.h>
+#include <dx11_backend.hpp>
+#include <memory>
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -9,6 +11,7 @@ class GUI
   private:
     WNDCLASS m_wndclass = {};
     HWND m_hwnd = NULL;
+    std::unique_ptr<DX11Backend> m_backend;
 
   public:
     GUI(HINSTANCE hInstance, int nCmdShow);
