@@ -5,16 +5,18 @@
 
 class DX11Backend
 {
-  private:
-    IDXGIFactory1 *m_factory = nullptr;
-    ID3D11Device *m_device = nullptr;
-    IDXGISwapChain *m_swapchain = nullptr;
-    ID3D11DeviceContext *m_context = nullptr;
+    private:
+        IDXGIFactory1*          m_factory     = nullptr;
+        ID3D11Device*           m_device      = nullptr;
+        IDXGISwapChain*         m_swapchain   = nullptr;
+        ID3D11DeviceContext*    m_context     = nullptr;
+        ID3D11RenderTargetView* m_rtv         = nullptr;
+        ID3D11Texture2D*        m_back_buffer = nullptr;
 
-  public:
-    DX11Backend(HWND hwnd);
-    ~DX11Backend() = default;
+    public:
+        DX11Backend(HWND hwnd);
+        ~DX11Backend() = default;
 
-  private:
-    std::vector<IDXGIAdapter1 *> enumerate_adapters();
+    private:
+        std::vector<IDXGIAdapter1*> enumerate_adapters();
 };

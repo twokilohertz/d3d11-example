@@ -3,4 +3,24 @@ BasedOnStyle: Microsoft
 IndentWidth: 4
 ---
 Language: Cpp
-ColumnLimit: 100
+ColumnLimit: 120
+IndentWidth: 4
+InsertNewlineAtEOF: true
+AlignAfterOpenBracket: Align
+AlignArrayOfStructures: Left
+AlignConsecutiveDeclarations: true
+AlignConsecutiveAssignments:
+    Enabled: true
+    AcrossEmptyLines: true
+    AcrossComments: true
+AlignConsecutiveBitFields: true
+AlignConsecutiveMacros: true
+AlignEscapedNewlines: Left
+AlignOperands: true
+AlignTrailingComments: Always
+AllowShortBlocksOnASingleLine: Empty
+IndentAccessModifiers: true
+IndentCaseLabels: true
+
+PointerAlignment: Left
+ReferenceAlignment: Left

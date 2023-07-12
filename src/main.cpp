@@ -10,14 +10,14 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     freopen("CONIN$", "r", stdin);
     freopen("CONOUT$", "w", stdout);
     // freopen("CONERR$", "w", stderr); - doesn't work? Creates an actual "CONERR$" file instead
-    std::cout << "Allocated console for logging" << std::endl;
+    std::cout << "[DEBUG] Allocated console for logging" << std::endl;
 #endif
 
     GUI gui = GUI(hInstance, nCmdShow);
     gui.run();
 
 #if !defined(NDEBUG)
-    std::cout << "Freeing console" << std::endl;
+    std::cout << "[DEBUG] Freeing console" << std::endl;
     FreeConsole();
 #endif
 

@@ -8,15 +8,15 @@ const wchar_t CLASS_NAME[] = L"D3D11 Example";
 
 class GUI
 {
-  private:
-    WNDCLASS m_wndclass = {};
-    HWND m_hwnd = NULL;
-    std::unique_ptr<DX11Backend> m_backend;
+    private:
+        WNDCLASS                     m_wndclass = {};
+        HWND                         m_hwnd     = NULL;
+        std::unique_ptr<DX11Backend> m_backend;
 
-  public:
-    GUI(HINSTANCE hInstance, int nCmdShow);
-    ~GUI();
+    public:
+        GUI(HINSTANCE hInstance, int nCmdShow);
+        ~GUI();
 
-    void run();
-    HWND get_window_handle(void);
+        void run();
+        HWND get_window_handle(void);
 };
