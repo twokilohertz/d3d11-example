@@ -1,6 +1,5 @@
 ---
 BasedOnStyle: Microsoft
-IndentWidth: 4
 ---
 Language: Cpp
 ColumnLimit: 120
@@ -21,6 +20,6 @@ AlignTrailingComments: Always
 AllowShortBlocksOnASingleLine: Empty
 IndentAccessModifiers: true
 IndentCaseLabels: true
-
+SortIncludes: CaseInsensitive
 PointerAlignment: Left
 ReferenceAlignment: Left

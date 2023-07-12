@@ -1,4 +1,5 @@
 #include "dx11_backend.hpp"
+#include "hresult_helpers.h"
 #include <cstdint>
 #include <iostream>
 
@@ -56,17 +57,11 @@ DX11Backend::DX11Backend(HWND hwnd)
     //                                             &quality_level);
     // }
 
-    if (FAILED(m_swapchain->GetBuffer(0, IID_PPV_ARGS(&m_back_buffer))))
-    {
-        abort();
-    }
+    HR_ABORT_IF_FAILED(m_swapchain->GetBuffer(0, IID_PPV_ARGS(&m_back_buffer)))
 
     std::cout << "[DX11Backend] Got the swap-chain's back buffer" << std::endl;
 
-    if (FAILED(m_device->CreateRenderTargetView(m_back_buffer, NULL, &m_rtv)))
-    {
-        abort();
-    }
+    HR_ABORT_IF_FAILED(m_device->CreateRenderTargetView(m_back_buffer, NULL, &m_rtv))
 
     std::cout << "[DX11Backend] Created render view target" << std::endl;
 
@@ -91,6 +86,8 @@ DX11Backend::DX11Backend(HWND hwnd)
     viewport.MaxDepth       = 1.0F;
 
     m_context->RSSetViewports(1, &viewport);
+
+    DebugBreak();
 }
 
 // DX11Backend::~DX11Backend()
