@@ -14,7 +14,7 @@ class GUI
         std::unique_ptr<DX11Backend> m_backend;
 
     public:
-        GUI(HINSTANCE hInstance, int nCmdShow);
+        GUI(HINSTANCE hInstance, int nCmdShow, int32_t width = 640, int32_t height = 480);
         ~GUI();
 
         void run();

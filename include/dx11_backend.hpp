@@ -19,6 +19,7 @@ class DX11Backend
     public:
         DX11Backend(HWND hwnd);
         ~DX11Backend() = default;
+        void render();
 
     private:
         std::vector<IDXGIAdapter1*> enumerate_adapters();

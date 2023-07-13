@@ -2,13 +2,13 @@
 #include <Windows.h>
 
 #define HR_ABORT_IF_FAILED(hr) \
-    if (hr != S_OK)            \
+    if (FAILED(hr))            \
     {                          \
         abort();               \
     }
 
 #define HR_ALERT_IF_FAILED(hr)                                                                            \
-    if (hr != S_OK)                                                                                       \
+    if (FAILED(hr))                                                                                       \
     {                                                                                                     \
         wchar_t message[MAX_PATH] = {0};                                                                  \
         swprintf_s(message, sizeof(message), L"Fatal error on line: %d in file %hs", __LINE__, __FILE__); \
