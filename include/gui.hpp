@@ -1,6 +1,6 @@
-#include <Windows.h>
 #include <dx11_backend.hpp>
 #include <memory>
+#include <Windows.h>
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 

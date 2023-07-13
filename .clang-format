@@ -10,7 +10,7 @@ AlignArrayOfStructures: Left
 AlignConsecutiveDeclarations: true
 AlignConsecutiveAssignments:
     Enabled: true
-    AcrossEmptyLines: true
+    AcrossEmptyLines: false
     AcrossComments: true
 AlignConsecutiveBitFields: true
 AlignConsecutiveMacros: true

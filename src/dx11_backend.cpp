@@ -12,7 +12,7 @@ DX11Backend::DX11Backend(HWND hwnd)
         abort();
     }
 
-    auto dxgi_adapters                   = enumerate_adapters();
+    auto dxgi_adapters = enumerate_adapters();
 
     // Create device & swap chain
 
@@ -31,10 +31,10 @@ DX11Backend::DX11Backend(HWND hwnd)
     swap_chain_desc.SampleDesc.Quality                 = 0;
     swap_chain_desc.Windowed                           = TRUE;
 
-    const D3D_FEATURE_LEVEL requested_feature_levels   = D3D_FEATURE_LEVEL_11_0;
-    int                     num_feature_levels         = 1;
+    const D3D_FEATURE_LEVEL requested_feature_levels = D3D_FEATURE_LEVEL_11_0;
+    int                     num_feature_levels       = 1;
 
-    UINT create_device_flags                           = 0;
+    UINT create_device_flags = 0;
 #if !defined(NDEBUG)
     create_device_flags |= D3D11_CREATE_DEVICE_DEBUG;
 #endif
@@ -86,8 +86,6 @@ DX11Backend::DX11Backend(HWND hwnd)
     viewport.MaxDepth       = 1.0F;
 
     m_context->RSSetViewports(1, &viewport);
-
-    DebugBreak();
 }
 
 // DX11Backend::~DX11Backend()

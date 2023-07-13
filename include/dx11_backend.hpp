@@ -1,7 +1,7 @@
 #include "dxgi.h"
-#include <Windows.h>
 #include <d3d11.h>
 #include <vector>
+#include <Windows.h>
 
 class DX11Backend
 {

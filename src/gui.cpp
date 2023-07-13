@@ -32,10 +32,8 @@ GUI::GUI(HINSTANCE hInstance, int nCmdShow)
 
 GUI::~GUI()
 {
-    ShowWindow(m_hwnd, SW_HIDE);
-    CloseHandle(m_hwnd);
-    // FIXME: vvv Exception thrown [...]: 0xC0000008: An invalid handle was specified.
-    UnregisterClass(CLASS_NAME, GetModuleHandle(NULL));
+    ShowWindow(m_hwnd, SW_HIDE); // Window should already be destroyed anyway
+    UnregisterClass(CLASS_NAME, NULL);
 }
 
 void GUI::run()

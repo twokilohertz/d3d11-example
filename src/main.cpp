@@ -1,7 +1,7 @@
 #include "gui.hpp"
-#include <Windows.h>
 #include <cstdint>
 #include <iostream>
+#include <Windows.h>
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
