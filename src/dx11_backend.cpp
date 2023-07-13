@@ -61,7 +61,7 @@ DX11Backend::DX11Backend(HWND hwnd)
 
     std::cout << "[DX11Backend] Got the swap-chain's back buffer" << std::endl;
 
-    HR_ABORT_IF_FAILED(m_device->CreateRenderTargetView(m_back_buffer, NULL, &m_rtv))
+    HR_ABORT_IF_FAILED(m_device->CreateRenderTargetView(m_back_buffer.Get(), NULL, &m_rtv))
 
     std::cout << "[DX11Backend] Created render view target" << std::endl;
 
