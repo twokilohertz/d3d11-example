@@ -55,7 +55,7 @@ DX11Backend::DX11Backend(HWND hwnd)
     std::cout << "[DX11Backend] Got the swap-chain's back buffer" << std::endl;
 
     HR_ALERT_IF_FAILED(m_device->CreateRenderTargetView(m_back_buffer.Get(), nullptr, m_rtv.GetAddressOf()))
-    m_back_buffer->Release();
+    // m_back_buffer->Release(); -- this causes a double-free currently
 
     std::cout << "[DX11Backend] Created render target view" << std::endl;
 
