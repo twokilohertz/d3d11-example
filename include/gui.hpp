@@ -1,3 +1,6 @@
+#if !defined(GUI_HPP)
+#define GUI_HPP
+
 #include <dx11_backend.hpp>
 #include <memory>
 #include <Windows.h>
@@ -20,3 +23,5 @@ class GUI
         void run();
         HWND get_window_handle(void);
 };
+
+#endif

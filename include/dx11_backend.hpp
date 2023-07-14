@@ -1,3 +1,6 @@
+#if !defined(DX11_BACKEND_HPP)
+#define DX11_BACKEND_HPP
+
 #include "dxgi.h"
 #include <d3d11.h>
 #include <vector>
@@ -24,3 +27,5 @@ class DX11Backend
     private:
         std::vector<IDXGIAdapter1*> enumerate_adapters();
 };
+
+#endif

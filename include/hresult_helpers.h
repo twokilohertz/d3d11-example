@@ -1,3 +1,6 @@
+#if !defined(HRESULT_HELPERS_H)
+#define HRESULT_HELPERS_H
+
 #include <stdio.h>
 #include <Windows.h>
 
@@ -15,3 +18,5 @@
         MessageBox(NULL, message, L"Fatal error", MB_OK | MB_ICONERROR);                                  \
         abort();                                                                                          \
     }
+
+#endif
